@@ -14,9 +14,6 @@ body {
     color: #fff;
 }
 
-/* ///////////////////////////
-////////////////////// */
-
 /* ////////////////////
         nav
 ////////////////// */
@@ -61,7 +58,6 @@ nav a.active {
   width: 100%;
 }
 
-/* 共用區塊樣式 */
 .portfolio-section {
   position: relative;
   width: 100%;
@@ -93,7 +89,7 @@ nav a.active {
   color: #888;
 }
 
-/* UI/UX active 狀態（之後 JS 控制） */
+/* UI/UX active  */
 .uiux-section .section-title {
   color: #ff2d2d;
 }
@@ -112,7 +108,6 @@ nav a.active {
   margin-bottom: 48px;
 }
 
-/* Showcase */
 .uiux-showcase {
   display: flex;
   align-items: center;
@@ -146,12 +141,10 @@ nav a.active {
 .uiux-card {
   width: 380px;
   opacity: 0.4;
-  /* 原本是 scale(0.9)，因為變大了，旁邊的可以縮更小一點來凸顯中間 */
   transform: scale(0.85);
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* 中央主卡 */
 .uiux-card.active {
   opacity: 1;
   transform: scale(1);
@@ -160,16 +153,14 @@ nav a.active {
 
 .card-media {
   width: 100%;
-  /* 建議改用長寬比，例如 3:4。這樣在不同螢幕寬度下，高度會自動等比例縮放 */
   aspect-ratio: 3 / 4.2; 
-  height: auto; /* 取消原本固定的 540px */
-  background: #1a1a1a; /* 稍微深一點的背景色，讓圖片邊緣更自然 */
+  height: auto; 
+  background: #1a1a1a; 
   border-radius: 12px;
   margin-bottom: 20px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
   
-  /* 確保容器內容居中 */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -178,16 +169,13 @@ nav a.active {
 .card-media img {
   width: 100%;
   height: 100%;
-  /* 關鍵點：使用 contain 可以完整顯示 UI 截圖，不被裁切 */
-  /* 如果你希望圖片填滿整個框且不介意邊緣被裁一點，請用 cover */
   object-fit: contain; 
-  
   display: block;
   /* 提升圖片在高解析度螢幕上的清晰度 */
   image-rendering: -webkit-optimize-contrast; 
 }
 
-/* 針對 active 狀態的卡片（中間那張）做微調，確保過渡平滑 */
+/* 針對 active 狀態的卡片確保過渡平滑 */
 .uiux-card.active .card-media {
   box-shadow: 0 15px 45px rgba(0,0,0,0.6);
 }
@@ -267,13 +255,9 @@ nav a.active {
 }
 
 
-
-
-
-/* 每一塊斜切背景 */
 .graphic-slice {
   flex: 1;
-  margin-left: -60px;            /* 比原本 -40px 再大一點，畫面更滿 */
+  margin-left: -60px;            
   min-width: 402px;
   transform: skewX(-12deg);      /* 形狀斜 */
   overflow: hidden;              /* 關鍵：裁切用 */
@@ -284,14 +268,13 @@ nav a.active {
 .graphic-slice::before {
   content: "";
   position: absolute;
-  inset: -20%;                   /* 放大圖片，避免斜切露白 */
+  inset: -20%;                   
   background-size: 90%;
   background-position: center center;
-  transform: skewX(12deg);       /* 抵銷父層 skew */
+  transform: skewX(12deg);     
   image-rendering: -webkit-optimize-contrast;
 }
 
-/* 中央入口 */
 .graphic-entry {
   position: relative;
   z-index: 2;
@@ -345,17 +328,14 @@ nav a.active {
         MEDIA
 ////////////////// */
 
-/* ====================================
-    優化：響應式設計 (Responsive Design)
-==================================== */
 
 @media (max-width: 1600px) {
   .graphic-slice:nth-child(4) {
-    display: none; /* 隱藏第四張 */
+    display: none; 
   }
   
   .graphic-slice {
-    flex: 1; /* 剩下的三張平分寬度 */
+    flex: 1;
   }
 }
 
@@ -366,16 +346,14 @@ nav a.active {
 }
 
 @media (max-width: 1450px) {
-  /* 增加 UI/UX 標題與展示區的間隔 */
   .section-header h2 {
-    margin-bottom: 90px; /* 增加間隔，避免太擠 */
+    margin-bottom: 90px; 
     text-align: center;
   }
 
-  /* UI/UX 按鈕優化：確保不擋住卡片 */
   .uiux-showcase {
     position: relative;
-    padding: 0 100px; /* 增加兩側內邊距，把按鈕往外推 */
+    padding: 0 100px; 
   }
 
   .nav-arrow {
@@ -392,7 +370,7 @@ nav a.active {
 @media (max-width: 1400px) {
   .uiux-showcase {
     position: relative;
-    padding: 0 80px; /* 留出空間給按鈕 */
+    padding: 0 80px;
   }
 
   .nav-arrow {
@@ -407,12 +385,10 @@ nav a.active {
 }
 
 
-
-/* @media (max-width: 1200px) // 大畫面笔记本 */
 @media (max-width: 1200px) {
   .uiux-showcase {
-    position: relative; /* 讓按鈕可以相對此區域定位 */
-    padding: 0 60px;    /* 留出空間給按鈕 */
+    position: relative; 
+    padding: 0 60px;    
   }
 
   .nav-arrow {
@@ -422,13 +398,12 @@ nav a.active {
     z-index: 10;
     width: 50px;
     height: 50px;
-    background: rgba(0, 0, 0, 0.5); /* 增加背景避免在手機上看不見 */
+    background: rgba(0, 0, 0, 0.5); 
   }
 
   .nav-arrow.prev { left: 10px; }
   .nav-arrow.next { right: 10px; }
 
-  /* 縮小非活動卡片，避免佔空間 */
   .uiux-card {
     width: 280px;
   }
@@ -436,37 +411,34 @@ nav a.active {
 
 @media (max-width: 1110px) {
   .graphic-background {
-    flex-direction: row; /* 確保是左右 */
+    flex-direction: row; 
   }
 
   .graphic-slice {
     margin: 0;
     min-width: auto;
-    flex: 1; /* 兩張平分寬度 */
-    transform: none !important; /* 變回正體 */
+    flex: 1; 
+    transform: none !important; 
     box-shadow: none;
   }
 
   .graphic-slice::before {
-    transform: none !important; /* 抵銷內部圖片 skew */
+    transform: none !important; 
     inset: 0;
     background-size: cover;
   }
 
-  /* 隱藏第 3, 4 張，只留 1, 2 張左右並排 */
   .graphic-slice:nth-child(3),
   .graphic-slice:nth-child(4) {
     display: none;
   }
 
-  /* 讓 Graphic 入口處的標題背景更明顯 */
   .graphic-entry h2 {
     font-size: 32px;
     background: rgba(0, 0, 0, 0.6);
   }
 }
 
-/* @media (max-width: 992px)  // 平板 */
 @media (max-width: 992px) {
   nav a {
     font-size: 1.2em;
@@ -477,22 +449,18 @@ nav a.active {
     font-size: 32px;
   }
   
-  /* UI/UX 卡片再縮小一點 */
   .uiux-card {
     width: 260px;
   }
   
-  /* 讓箭頭稍微靠近內容 */
   .nav-arrow {
     width: 50px;
     height: 50px;
-    font-size: 14px; /* 箭頭符號變小 */
+    font-size: 14px; 
   }
-    
 }
 
 
-/* @media (max-width: 768px)  // 橫向手機 / 小型平板 */
 @media (max-width: 768px) {
   nav {
     display: flex;
@@ -510,7 +478,6 @@ nav a.active {
     font-size: 24px;
   }
 
-  /* UI/UX 為了不擋住卡片，手機端將按鈕縮小並稍微透明 */
   .uiux-showcase {
     padding: 0 40px; 
   }
@@ -532,7 +499,6 @@ nav a.active {
     display: block;
   }
 
-
 }
 
 /* @media (max-width: 576px)  // 小手機 (優化作品集單欄顯示) */
@@ -541,15 +507,12 @@ nav a.active {
     font-size: 1em;
   }
    
-  /* UI/UX 標題再小一點 */
-  /* 1. UI/UX 標語縮小並增加間距 */
   .section-header h2 {
     font-size: 22px;
     margin-bottom: 50px;
     text-align: center;
   }
 
-  /* 2. 解決按鈕遮擋：將按鈕移至卡片下方，或縮到極小靠邊 */
   .uiux-showcase {
     flex-direction: column; /* 讓按鈕與卡片垂直排列 */
     gap: 20px;
@@ -557,7 +520,7 @@ nav a.active {
   }
 
   .uiux-cards {
-    order: 1; /* 卡片在最上面 */
+    order: 1; 
     width: 90%;
   }
 
@@ -566,16 +529,15 @@ nav a.active {
     width: 100%;
     margin: 0 auto;
     flex-direction: column;
-    align-items: center; /* 確保文字居中 */
+    align-items: center; 
   }
 
   .uiux-card.active { display: flex; }
 
-  /* 3. 箭頭按鈕重新定位：放在卡片兩側底部，不重疊圖片 */
   .nav-arrow {
     position: absolute;
     top: auto;
-    bottom: -60px; /* 移到卡片下方區域 */
+    bottom: -60px; 
     transform: none;
     width: 45px;
     height: 45px;
@@ -585,7 +547,7 @@ nav a.active {
   .nav-arrow.prev { left: 20%; }
   .nav-arrow.next { right: 20%; }
 
-  /* --- Graphic 修正 --- */
+
   .graphic-entry h2 {
     font-size: 24px;
     padding: 10px 20px;
@@ -596,8 +558,8 @@ nav a.active {
   }
 
 
-  .graphic-slice { height: 80%; } /* 平分高度 */
-  .graphic-slice:nth-child(3) { display: none; } /* 再隱藏第 3 張，剩下 2 張 */
+  .graphic-slice { height: 80%; } 
+  .graphic-slice:nth-child(3) { display: none; } 
 
   
 }

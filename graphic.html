@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphic Design Portfolio</title>
+    <link rel="stylesheet" href="graphic.css">
+</head>
+<body class="graphic-page">
+
+  <header class="page-header">
+    <a href="portfolio.html" class="back-btn">
+      <span class="arrow">←</span> BACK
+    </a>
+    <h1 class="main-title">Graphic Design</h1>
+  </header>
+
+  <main class="content-wrapper">
+
+    <section class="design-category visual-comm">
+  <div class="category-info">
+    <h2>Visual<br>Communication<br>Design</h2>
+  </div>
+  
+  <div class="carousel-container">
+    <div class="carousel-track">
+      <div class="carousel-item" data-description="Fashion & Art - Original Character"><img src="image_ps/DB/1.jpg" alt="1" loading="lazy"
+     decoding="async"></div>
+      <div class="carousel-item" data-description="Art Posters - Little Elf"><img src="image_ps/DB/14.jpg" alt="2" loading="eager"
+     decoding="async"></div>
+      <div class="carousel-item" data-description="Restaurant Promotion - Poster"><img src="image_ps/DB/20.jpg" alt="3"></div>
+      <div class="carousel-item" data-description="Summer Soul 2023 - KUUGA(Ultimate Form)"><img src="image_ps/DB/10.jpg" alt="4"></div>
+      <div class="carousel-item" data-description="Fashion & Art  - Photography Poster"><img src="image_ps/DB/19.jpg" alt="5"></div>
+      <div class="carousel-item" data-description="Travel - Poster"><img src="image_ps/DB/17.jpg" alt="6"></div>
+      <div class="carousel-item" data-description="Art Posters - Walking with Insects"><img src="image_ps/DB/22.jpg" alt="7"></div>
+      <div id="image-modal" class="modal">
+        <span class="close-modal">&times;</span>
+        <div class="modal-content">
+            <img id="modal-img" src="" alt="Full View">
+            <div id="modal-caption" class="modal-caption"></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="carousel-controls">
+      <button class="control-btn prev">←</button>
+      <button class="control-btn next">→</button>
+    </div>
+  </div>
+</section>
+
+    <hr class="section-divider">
+
+  <section class="design-category branding">
+  <div class="category-info">
+    <h2>Branding<br>Design</h2>
+  </div>
+
+  <div class="branding-showcase">
+    <div class="thumb-column left-col">
+      <div class="thumb-item active" 
+           data-full="image_ps/DB/28.jpg" 
+           data-title="Pepsi Promotional Poster 01" 
+           data-desc="
+           The design showcases Pepsi's youthful and energetic image, 
+           appealing to consumers who value style and instant gratification.
+           ">
+        <img src="image_ps/DB/28.jpg" alt="Thumb 1" rel="preload" loading="eager"
+     decoding="async">
+      </div>
+      <div class="thumb-item" 
+           data-full="image_ps/DB/30.jpg" 
+           data-title="Chage - Shopping Bag Display 02" 
+           data-desc="
+           The Chagee shopping bag also features a white background with 
+           red and black elements and illustrations, showcasing 
+           a minimalist and stylish look while highlighting the brand image.
+           ">
+        <img src="image_ps/DB/30.jpg" alt="Thumb 2" rel="preload">
+      </div>
+      <div class="thumb-item" 
+           data-full="image_ps/DB/37.jpg" 
+           data-title="Lamborghini - Visual Poster" 
+           data-desc="
+           The Lamborghini poster showcases speed and luxury 
+           with its glossy black body and red tires, while the multi-angle 
+           layout highlights details and brand style.
+           ">
+        <img src="image_ps/DB/37.jpg" alt="Thumb 3">
+      </div>
+      <div class="thumb-item" 
+           data-full="image_ps/DB/33.jpg" 
+           data-title="Chage - Shopping Bag Display 03" 
+           data-desc="
+           The Chagee tote bag features a white base with geometric 
+           patterns and grey tones, presenting a modern and minimalist style. 
+           Striking lettering and illustrations highlight the brand's distinctive character.
+           ">
+        <img src="image_ps/DB/33.jpg" alt="Thumb 4">
+      </div>
+    </div>
+
+    <div class="main-display-area">
+      <div class="main-image-wrapper">
+        <img id="branding-main-img" src="image_ps/DB/28.jpg" alt="Main Display" loading="lazy"
+     decoding="async">
+      </div>
+      <div class="main-text-content">
+        <h3 id="branding-title">Pepsi Promotional Poster 01</h3>
+        <hr class="text-divider">
+        <p id="branding-desc">
+          The design showcases Pepsi's youthful and energetic image, 
+          appealing to consumers who value style and instant gratification.
+        </p>
+      </div>
+    </div>
+
+    <div class="thumb-column right-col">
+      <div class="thumb-item" 
+           data-full="image_ps/DB/31.jpg" 
+           data-title="Chage - Shopping Bag Display 01" 
+           data-desc="
+           The Chagee shopping bag is predominantly white, 
+           accented with red and black elements and female illustrations, 
+           interpreting tea culture and showcasing an elegant and fashionable atmosphere.
+           ">
+        <img src="image_ps/DB/31.jpg" alt="Thumb 5">
+      </div>
+      <div class="thumb-item" 
+           data-full="image_ps/DB/18.jpg" 
+           data-title="Pepsi Promotional Poster 02" 
+           data-desc="
+           Pepsi Max promotional posters feature a retro-modern background, 
+           clearly presenting promotional information and highlighting new products.
+           ">
+        <img src="image_ps/DB/18.jpg" alt="Thumb 6">
+      </div>
+      <div class="thumb-item" 
+           data-full="image_ps/DB/42.jpg" 
+           data-title="NACOSIL - 3D Packaging Design" 
+           data-desc="
+           The overall design aims to attract consumers' 
+           attention and convey the product's professionalism and purpose.
+           ">
+        <img src="image_ps/DB/42.jpg" alt="Thumb 7">
+      </div>
+      <div class="thumb-item" 
+           data-full="image_ps/DB/41.jpg" 
+           data-title="Packaging Design Showcase" 
+           data-desc="
+           Showcase the outer packaging design. The design utilizes color 
+           schemes and patterns to attract consumers' attention and clearly convey the product's features.
+           ">
+        <img src="image_ps/DB/41.jpg" alt="Thumb 8">
+      </div>
+    </div>
+  </div>
+  </section>
+
+  </main>
+
+  <script src="graphic.js"></script>
+</body>
+</html>
