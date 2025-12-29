@@ -9,9 +9,11 @@ html, body {
   padding: 0;
   height: 100%;
   overflow: hidden; 
+  height: 100dvh;
   background-color: var(--bg-dark);
   color: #fff;
   font-family: 'Arial', sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* --- Header 保持位置 --- */
@@ -37,6 +39,8 @@ html, body {
   font-size: 14px;
   transition: 0.3s;
   flex-shrink: 0;
+  -webkit-backdrop-filter: blur(10px); 
+  backdrop-filter: blur(10px);
 }
 
 .back-btn:hover { color: var(--accent-red); }
@@ -97,6 +101,9 @@ html, body {
   width: 300%;
   height: 100%;
   transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+
+  will-change: transform;
+  -webkit-transform: translate3d(0,0,0);
 }
 
 .media-item {
@@ -120,6 +127,10 @@ html, body {
   top: 0;
   left: 0;
   transform: none;
+
+  -webkit-backface-visibility: hidden; 
+  outline: none;
+  border: none;
 }
 
 .carousel-btns {
@@ -138,6 +149,18 @@ html, body {
   cursor: pointer;
   font-size: 24px;
   transition: 0.3s;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  line-height: 1;      /* 移除行高干擾 */
+  -webkit-appearance: none; 
+}
+
+.nav-circle span {
+  display: block;
+  transform: translateY(-2px); 
 }
 
 .nav-circle:hover {
@@ -296,6 +319,8 @@ html, body {
   html, body {
     overflow-y: auto;
     height: auto;
+    min-height: 100dvh;
+    -webkit-overflow-scrolling: touch; 
   }
 
   .page-header {
