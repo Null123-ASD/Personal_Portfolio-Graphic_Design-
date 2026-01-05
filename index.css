@@ -254,6 +254,70 @@ nav a.active {
     portfolio
 ////////////////// */
 
+.portfolio-section{
+  width: 90%;
+  margin: 0 auto;
+  position: relative; /* 保持不变，用作定位上下文 */
+}
+
+/* 容器由 JS 生成：.portfolio-item 包一张 <img> 和一个 .overlay */
+.portfolio-section .portfolio-item{
+  position: absolute;         
+  width: 380px;               
+  overflow: hidden;
+  border-radius: 8px;
+  transition: transform .3s ease;
+}
+
+.portfolio-section .portfolio-item img{
+  width: 100%;
+  display: block;
+  transition: transform .4s ease;
+}
+.portfolio-section .portfolio-item:hover img{
+  transform: scale(1.06);
+}
+
+/* 半透明渐变覆盖层 + 文字 */
+.portfolio-section .overlay{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
+  color: #fff;
+  font-weight: 700;
+  opacity: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,.15), rgba(0,0,0,.7));
+  transition: opacity .25s ease;
+}
+.portfolio-section .portfolio-item:hover .overlay{
+  opacity: 1;
+}
+
+
+.portfolio-filter {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.portfolio-filter button {
+  background: none;
+  border: 1px solid #fff;
+  padding: 8px 16px;
+  margin: 0 5px;
+  cursor: pointer;
+  color: white;
+  font-size: 14px;
+  transition: 0.3s;
+}
+.portfolio-filter button.active,
+.portfolio-filter button:hover {
+  background: #fff;
+  color: #000;
+}
+
 
 /* ////////////////////
     about
@@ -568,10 +632,126 @@ nav a.active {
 /* ======================
    Lightbox (作品詳情彈窗)
 ====================== */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 999;
+}
+.lightbox.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.lightbox-content {
+  position: relative;
+  background: rgba(30, 30, 30, 0.95);
+  border-radius: 16px;
+  padding: 1.5rem;
+  max-width: 95vw;
+  max-height: 85vh;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  overflow-y: auto;
+  animation: zoomIn 0.3s ease;
+}
+@keyframes zoomIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.lightbox-iframe {
+  width: 100%;
+  max-width: 800px; 
+  margin: 0 auto 1rem auto;
+  aspect-ratio: 16/9; 
+  height: auto;
+}
+
+.lightbox-iframe iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.lightbox-img,
+.lightbox-video { 
+  width: 100%;
+  max-width: 900px;
+  max-height: 65vh; 
+  object-fit: contain;
+  border-radius: 10px;
+  margin: 0 auto 1rem auto; 
+  display: block;
+}
+
+.lightbox-video { 
+    min-height: 200px;
+}
+
+.lightbox-title {
+  font-size: 1.4rem;
+  color: var(--color3);
+  margin-bottom: 0.5rem;
+}
+
+.lightbox-desc {
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 3rem;
+  background: transparent;
+  border: none;
+  color: var(--color2);
+  cursor: pointer;
+  transition: color 0.3s ease;
+  z-index: 101;
+}
+.lightbox-close:hover {
+  color: var(--color3);
+}
 
 /* ======================
    Lightbox Navigation
 ====================== */
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+  z-index: 100;
+}
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+.lightbox-prev { left: 10px; }
+.lightbox-next { right: 10px; }
+
 
 
 /* =========================

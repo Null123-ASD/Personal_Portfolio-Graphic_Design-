@@ -10,10 +10,10 @@
 </head>
 <body>
     <nav>
-        <a href="#home" onclick="showSection('home'); return false;" class="active">Home</a>
-        <a href="portfolio.html" >Portfolio</a>
-        <a href="#about" onclick="showSection('about'); return false;">About</a>
-        <a href="#contact" onclick="showSection('contact'); return false;">Contact</a>
+        <a href="#" onclick="showSection('home')" class="active">Home</a>
+        <a href="#" onclick="showSection('portfolio')">Portfolio</a>
+        <a href="#" onclick="showSection('about')">About</a>
+        <a href="#" onclick="showSection('contact')">Contact</a>
     </nav>
 
     <div id="home" class="section active home-hero">
@@ -40,6 +40,34 @@
             <li></li>
         </ul>
 
+    </div>
+
+    <div id="portfolio" class="section portfolio">
+        <div class="portfolio-filter">
+            <button data-filter="all" class="active">All</button>
+            <button data-filter="uiux">UI / UX Design</button>
+            <button data-filter="graphic">Graphic Design</button>
+            <button data-filter="branding">Branding</button>
+        </div>
+        <div class="portfolio-section"></div>
+    </div>
+
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" aria-label="Close" style="z-index: 101;">&times;</button> 
+
+            <button class="lightbox-prev" aria-label="Previous" style="z-index: 100;">&#10094;</button> 
+            <button class="lightbox-next" aria-label="Next" style="z-index: 100;">&#10095;</button> 
+
+            <img src="" alt="" class="lightbox-img">
+            
+            <video class="lightbox-video" controls autoplay loop muted style="display:none;"></video>
+            
+            <h3 class="lightbox-title"></h3>
+            <p class="lightbox-desc"></p>
+        </div>
     </div>
 
 
